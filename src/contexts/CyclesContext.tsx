@@ -45,15 +45,15 @@ export function CyclesContextProvider({
       cycles: [],
       activeCycleId: null,
     },
-    () => {
-      const storedStateAsJSON = localStorage.getItem(
-        '@tati-timer:cycles-state-1.0.0',
-      )
+    // () => {
+    //   const storedStateAsJSON = localStorage.getItem(
+    //     '@tati-timer:cycles-state-1.0.0',
+    //   )
 
-      if (storedStateAsJSON) {
-        return JSON.parse(storedStateAsJSON)
-      }
-    },
+    //   if (storedStateAsJSON) {
+    //     return JSON.parse(storedStateAsJSON)
+    //   }
+    // },
   )
 
   const { cycles, activeCycleId } = cyclesState
@@ -66,11 +66,11 @@ export function CyclesContextProvider({
     return 0
   })
 
-  useEffect(() => {
-    const stateJSON = JSON.stringify(cyclesState)
+  // useEffect(() => {
+  //   const stateJSON = JSON.stringify(cyclesState)
 
-    localStorage.setItem('@tati-timer:cycles-state-1.0.0', stateJSON)
-  }, [cyclesState])
+  //   localStorage.setItem('@tati-timer:cycles-state-1.0.0', stateJSON)
+  // }, [cyclesState])
 
   function setSecondsPassed(seconds: number) {
     setamountSecondsPassed(seconds)
